@@ -1,0 +1,53 @@
+/*
+=============== 
+Typeface import
+===============
+*/
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap");
+
+/*
+=============== 
+General Styles 
+===============
+*/
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%; /*16px*/
+}
+
+body {
+  background-color: var(--clr-dark-purple);
+  font-family: var(--space-goth);
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.white-text-clr {
+  color: var(--clr-white);
+}
+.black-text-clr {
+  color: var(--clr-black);
+}
+.pink-bg-clr {
+  background-color: var(--clr-pink);
+}
+.yellow-bg-clr {
+  background-color: var(--clr-yellow);
+}

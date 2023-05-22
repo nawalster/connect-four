@@ -1,0 +1,78 @@
+/*
+=============== 
+Menus (main)
+===============
+*/
+
+.menu {
+  display: grid;
+  place-items: center;
+  row-gap: 4.9375rem;
+  padding: 12rem 0;
+  background-color: var(--clr-light-purple);
+}
+
+.menu-btn,
+.menu-link {
+  cursor: pointer;
+  font-size: var(--ft-heading-m);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-m);
+  width: 20.94rem;
+  height: 4.5rem;
+  border-radius: var(--radius20);
+  border: var(--border);
+  box-shadow: var(--box-shadow1);
+  padding: 0.81rem 1.25rem;
+  transition: var(--transition1);
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.menu-btn:hover,
+.menu-link:hover {
+  border-color: var(--clr-dark-purple);
+  box-shadow: var(--box-shadow2);
+}
+
+.menu-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+  justify-content: center;
+}
+
+.menu-link {
+  margin-bottom: 1.6875rem;
+}
+
+.menu-link-icon {
+  width: 5.125rem;
+  height: 2.875rem;
+}
+
+@media screen and (min-width: 768px) {
+  .menu {
+    width: 30rem;
+    height: auto;
+    border: var(--border);
+    border-radius: var(--radius40);
+    box-shadow: var(--box-shadow1);
+    margin: 9rem auto 0 auto;
+  }
+
+  .menu {
+    padding: 4.375rem 2.1875rem 3rem 2.1875rem;
+  }
+
+  .menu-btn,
+  .menu-link {
+    width: 25rem;
+    padding: 0.81rem 1.25rem;
+    transition: var(--transition1);
+  }
+}
