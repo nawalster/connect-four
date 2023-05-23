@@ -1,0 +1,47 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* colors */
+  --clr-black: #000;
+  --clr-white: #fff;
+  --clr-dark-purple: #5c2dd5;
+  --clr-light-purple: #7945ff;
+  --clr-pink: #fd6687;
+  --clr-yellow: #ffce67;
+
+  /* fonts */
+  --ft-heading-l: 3.5rem; /* 56px */
+  --ft-heading-m: 1.5rem; /* 24px */
+  --ft-heading-s: 1.25rem; /* 20px */
+  --ft-heading-xs: 1rem; /* 16px */
+  --ft-heading-2rem: 2rem;
+
+  /* Typeface */
+  --space-goth: "Space Grotesk", sans-serif;
+
+  /* weights */
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /* line height */
+  --lh-l: 4.4375rem; /* 71px */
+  --lh-m: 1.9375rem; /* 31px */
+  --lh-s: 1.625rem; /* 26px */
+  --lh-xs: 1.3125rem; /* 21px */
+
+  /* miscellaneous */
+  --radius20: 1.25rem; /* 20px */
+  --radius40: 2.5rem; /* 40px */
+  --radius60: 3.75rem; /* 60px */
+  --full-width: 39.5rem; /* 632px */
+  --max-width: 90rem; /* 1440px */
+  --border: 3px solid #000;
+  --box-shadow1: 0px 10px 0 #000;
+  --box-shadow2: 0px 10px 0 var(--clr-dark-purple);
+  --transition1: all 0.1s linear;
+  --transition2: all 0.3s linear;
+}

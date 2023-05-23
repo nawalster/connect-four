@@ -1,0 +1,125 @@
+/*
+=============== 
+Game Rules Modal
+===============
+*/
+
+.game-rules-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--clr-light-purple);
+  display: grid;
+  place-items: center;
+  transition: var(--transition1);
+  z-index: -1;
+  opacity: 0;
+}
+
+/* OPEN/CLOSE MODAL */
+.show-modal {
+  z-index: 1;
+  opacity: 1;
+}
+
+.game-rules-modal {
+  background-color: var(--clr-white);
+  display: grid;
+  place-items: center;
+  border: var(--border);
+  border-radius: var(--radius40);
+  box-shadow: var(--box-shadow1);
+  width: 20.9375rem;
+  margin: 0 auto;
+  max-width: 30rem;
+  padding: 2.875rem 1.25rem 0 1.25rem;
+  position: relative;
+}
+.game-rules-modal-body {
+  margin-bottom: 2.1875rem;
+}
+
+.game-rules-section-1 {
+  margin-bottom: 2rem;
+}
+
+.game-rules-modal-header,
+.game-rules-modal-subheader {
+  text-transform: uppercase;
+}
+
+.game-rules-modal-header {
+  color: var(--clr-black);
+  font-size: var(--ft-heading-l);
+  line-height: var(--lh-l);
+  text-align: center;
+  margin-bottom: 2.1875rem;
+}
+
+.game-rules-modal-subheader {
+  color: var(--clr-light-purple);
+  font-size: var(--ft-heading-s);
+  line-height: var(--lh-s);
+  margin-bottom: 1.5rem;
+}
+
+.game-rules-modal-content {
+  color: var(--clr-black);
+  font-size: var(--ft-heading-xs);
+  line-height: var(--lh-xs);
+  opacity: 0.66;
+}
+
+.games-rules-modal-list {
+  counter-reset: item;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.games-rules-modal-list > .game-rules-modal-content {
+  display: block;
+  margin-bottom: 1.125rem;
+  margin-left: 2em;
+}
+.games-rules-modal-list > .game-rules-modal-content::before {
+  display: inline-block;
+  content: counter(item) " ";
+  counter-increment: item;
+  font-weight: var(--fw-bold);
+  width: 1.7rem;
+  margin-left: -2em;
+}
+
+.check-mark-btn {
+  cursor: pointer;
+  // background: transparent;
+  background: url("/src/assets/images/icon-check.svg") no-repeat;
+  width: 4.6875rem;
+  height: 4.6875rem;
+  // z-index: -1;
+  border: none;
+  bottom: -3rem;
+}
+
+.check-mark-icon {
+  transition: var(--transition1);
+}
+
+.check-mark-icon:hover #Oval-Copy-37,
+.check-mark-icon:hover #Oval-Copy-38 {
+  fill: var(--clr-dark-purple);
+}
+
+@media screen and (min-width: 768px) {
+  .game-rules-modal {
+    width: 30rem;
+    padding-left: 2.125rem;
+    padding-right: 2.125rem;
+  }
+
+  .games-rules-modal-list > .game-rules-modal-content {
+    margin-bottom: 1rem;
+  }
+}
