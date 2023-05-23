@@ -1,0 +1,108 @@
+/*
+=============== 
+Game Board
+===============
+*/
+
+.gameboard {
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(7, 2.91rem);
+  grid-template-rows: repeat(6, 2.93rem);
+  width: 20.9375rem;
+  height: 19.375rem;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+  background: transparent;
+}
+
+.gameboard::before {
+  content: "";
+  background: url("../src/assets/images/board-layer-black-small.svg") no-repeat;
+  position: absolute;
+  width: 20.9375rem;
+  height: 20.375rem;
+}
+
+.gameboard::after {
+  content: "";
+  background: url("../src/assets/images/board-layer-white-small.svg") no-repeat;
+  position: absolute;
+  width: 20.9375rem;
+  height: 19.375rem;
+  z-index: 1;
+  pointer-events: none;
+}
+.cell {
+  position: relative;
+  cursor: pointer;
+  padding-left: 0.1rem;
+  z-index: 1;
+  display: flex;
+}
+
+.column-indicator {
+  width: 2rem;
+  height: 1.8rem;
+  margin: -2rem auto 0 auto;
+  visibility: hidden;
+}
+
+.game-piece {
+  width: 2.5rem;
+  height: 2.8125rem;
+}
+.game-piece[data-player="1"] {
+  background: url("../src/assets/images/counter-red-small.svg") no-repeat;
+}
+.game-piece[data-player="2"] {
+  background: url("../src/assets/images/counter-yellow-small.svg") no-repeat;
+}
+
+@media screen and (min-width: 768px) {
+  .gameboard {
+    grid-template-columns: repeat(7, 88px);
+    grid-template-rows: repeat(6, 88px);
+    width: 39.5rem;
+    height: 36.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .gameboard::before {
+    background: url("../src/assets/images/board-layer-black-large.svg")
+      no-repeat;
+    position: absolute;
+    width: 39.5rem;
+    height: 37.5rem;
+  }
+
+  .gameboard::after {
+    background: url("../src/assets/images/board-layer-white-large.svg")
+      no-repeat;
+    width: 39.5rem;
+    height: 36.5rem;
+  }
+
+  .cell {
+    padding-left: 0.57rem;
+    position: relative;
+  }
+
+  .column-indicator {
+    margin-top: -3rem;
+    visibility: visible;
+  }
+
+  .game-piece {
+    width: 4.6875rem;
+    height: 4.6875rem;
+    z-index: -1;
+  }
+
+  .game-piece[data-player="1"] {
+    background: url("../src/assets/images/counter-red-large.svg") no-repeat;
+  }
+  .game-piece[data-player="2"] {
+    background: url("../src/assets/images/counter-yellow-large.svg") no-repeat;
+  }
+}

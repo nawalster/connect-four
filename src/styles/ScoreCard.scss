@@ -1,0 +1,152 @@
+/*
+=============== 
+Score Cards
+===============
+*/
+.score-card-layout {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 3.3125rem;
+}
+
+.score-card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 8.875rem;
+  height: 5.0625rem;
+  background-color: var(--clr-white);
+  border: var(--border);
+  border-radius: var(--radius20);
+  box-shadow: var(--box-shadow1);
+}
+
+.score-card-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+.player-icon,
+.opponent-icon {
+  width: 3.375rem;
+  height: 3.6875rem;
+  position: absolute;
+}
+
+.player-icon {
+  left: -1.8rem;
+}
+.opponent-icon {
+  right: -1.8rem;
+}
+
+.score-card-player-title {
+  color: var(--clr-black);
+  font-size: var(--ft-heading-xs);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-xs);
+  text-transform: uppercase;
+}
+
+.score-card-score {
+  color: var(--clr-black);
+  font-size: var(--ft-heading-2rem);
+  font-weight: var(--fw-bold);
+  line-height: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .score-card-layout {
+    justify-content: space-evenly;
+  }
+  .score-card {
+    width: 17rem;
+    height: 6.25rem;
+  }
+  .score-card-stats {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .score-card-player-title {
+    font-size: var(--ft-heading-s);
+    line-height: var(--lh-s);
+  }
+  .stat-mg-left {
+    margin-left: 1rem;
+  }
+  .stat-mg-right {
+    margin-right: 1rem;
+  }
+
+  .opp-title {
+    order: 2;
+  }
+  .score-card-score {
+    font-size: var(--ft-heading-l);
+    line-height: var(--lh-l);
+  }
+}
+
+@media screen and (min-width: 1438px) {
+  .score-card-layout {
+    display: block;
+  }
+
+  .red-card,
+  .yellow-card {
+    position: absolute;
+    top: 22rem;
+  }
+
+  .red-card {
+    left: 12.6875rem;
+  }
+  .yellow-card {
+    right: 12.6875rem;
+  }
+
+  .score-card {
+    width: 8.8125rem;
+    height: 10rem;
+    flex-direction: column;
+  }
+
+  .score-card-stats {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .opp-title {
+    order: 0;
+  }
+  .stat-mg-left {
+    margin-left: 0;
+  }
+  .stat-mg-right {
+    margin-right: 0;
+  }
+
+  .player-icon,
+  .opponent-icon {
+    position: static;
+    margin-top: -2rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 1750px) {
+  .red-card {
+    left: 23%;
+  }
+  .yellow-card {
+    right: 23%;
+  }
+}

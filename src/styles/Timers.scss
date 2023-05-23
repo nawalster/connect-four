@@ -1,0 +1,51 @@
+/*
+=============== 
+Timers
+===============
+*/
+.timer {
+  width: 12.3125rem;
+  height: 10.25rem;
+  font-weight: var(--fw-bold);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 36.5rem;
+  margin: 0 auto;
+  z-index: 1;
+}
+.red-timer {
+  background: url("../src/assets/images/turn-background-red.svg") no-repeat;
+  color: var(--clr-white);
+}
+.yellow-timer {
+  background: url("../src/assets/images/turn-background-yellow.svg") no-repeat;
+  color: var(--clr-black);
+}
+
+.timer-text {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.timer-turn {
+  font-size: var(--ft-heading-xs);
+  line-height: var(--lh-xs);
+  text-transform: uppercase;
+}
+
+.timer-seconds-left {
+  font-size: var(--ft-heading-l);
+  line-height: var(--lh-l);
+}
+
+@media screen and (min-width: 768px) {
+  .timer {
+    top: 52.5rem;
+  }
+}
+@media screen and (min-width: 1438px) {
+  .timer {
+    top: 44.5rem;
+  }
+}
