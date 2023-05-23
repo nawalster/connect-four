@@ -1,10 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Logo from "./Logo";
 import PlayVPlayIcon from "../assets/images/player-vs-player.svg";
+import { useDispatch } from "react-redux";
+import { displayGameRules } from "../reducers/gameSlice";
 
 const GameMenu = () => {
+  const dispatch = useDispatch();
+
+  const handleOpenGameRules = () => {
+    console.log("open game rules");
+    dispatch(displayGameRules());
+  };
   return (
     <div className="menu">
+      <Logo />
       <div>
         <Link
           to="/gamescreen"
@@ -18,7 +28,9 @@ const GameMenu = () => {
           />
         </Link>
 
-        <button className="menu-btn">game rules</button>
+        <button className="menu-btn" onClick={handleOpenGameRules}>
+          game rules
+        </button>
       </div>
     </div>
   );

@@ -1,9 +1,24 @@
 import React from "react";
 import CheckIcon from "../assets/images/icon-check.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../store/store";
+import { closeGameRules } from "../reducers/gameSlice";
 
 const GameRulesModal = () => {
+  const dispatch = useDispatch();
+  const isGameRulesOpen = useSelector(
+    (state: RootState) => state.game.isGameRulesOpen
+  );
+
+  const handleCloseGameRules = () => {
+    dispatch(closeGameRules());
+  };
   return (
-    <div className="game-rules-overlay show-modal">
+    <div
+      className={`${
+        isGameRulesOpen ? "game-rules-overlay show-modal" : "game-rules-overlay"
+      }`}
+    >
       <article className="game-rules-modal">
         <h1 className="game-rules-modal-header">rules</h1>
         <div className="game-rules-modal-body">
@@ -33,7 +48,10 @@ const GameRulesModal = () => {
             </ol>
           </div>
         </div>
-        <button className="check-mark-btn">Exit</button>
+        <button
+          className="check-mark check-mark-btn"
+          onClick={handleCloseGameRules}
+        ></button>
       </article>
     </div>
   );

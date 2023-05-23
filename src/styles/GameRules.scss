@@ -92,6 +92,26 @@ Game Rules Modal
   margin-left: -2em;
 }
 
+.check-mark-btn {
+  cursor: pointer;
+  // background: transparent;
+  background: url("/src/assets/images/icon-check.svg") no-repeat;
+  width: 4.6875rem;
+  height: 4.6875rem;
+  // z-index: -1;
+  border: none;
+  bottom: -3rem;
+}
+
+.check-mark-icon {
+  transition: var(--transition1);
+}
+
+.check-mark-icon:hover #Oval-Copy-37,
+.check-mark-icon:hover #Oval-Copy-38 {
+  fill: var(--clr-dark-purple);
+}
+
 @media screen and (min-width: 768px) {
   .game-rules-modal {
     width: 30rem;
