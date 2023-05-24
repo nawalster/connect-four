@@ -17,6 +17,7 @@ const GameScreen = () => {
   const isWinnerDeclared = useSelector(
     (state: RootState) => state.game.isWinnerDeclared
   );
+  const isDraw = useSelector((state: RootState) => state.game.isDraw);
   return (
     <main>
       <div className="game-screen-container">
@@ -27,7 +28,7 @@ const GameScreen = () => {
         </div>
         <GameBoard />
         {isRedTurn ? <RedTimer /> : <YellowTimer />}
-        {isWinnerDeclared && <WinnerCard />}
+        {(isWinnerDeclared || isDraw) && <WinnerCard />}
         <PauseMenuModal />
       </div>
       <GameScreenFooter />

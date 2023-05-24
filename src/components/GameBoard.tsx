@@ -204,11 +204,9 @@ const GameBoard = () => {
     }
     if (!didPlayerWin(player, pieces)) {
       dispatch(turnOnAnimation());
-      // dispatch(toggleTurn());
     }
     if (!pieces.includes(0)) {
       dispatch(declareDraw());
-      // declareWinner(0);
     }
   };
 

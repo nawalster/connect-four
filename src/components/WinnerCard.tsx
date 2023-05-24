@@ -19,7 +19,7 @@ const WinnerCard = () => {
     <div className="winner-card">
       <div className="winner-card-text">
         <p className="winner-name">
-          player {winningPiece !== 0 ? winningPiece : "no one"}
+          {winningPiece !== 0 ? `player ${winningPiece}` : "no one"}
         </p>
         <p className="winner-statement">wins</p>
         <button
