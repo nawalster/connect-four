@@ -3,7 +3,7 @@ import { declareWinner } from "../reducers/gameSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { closePauseMenu, playAgain } from "../reducers/gameSlice";
 import { RootState } from "../store/store";
-import { clearBoardDOM } from "../helpers/helpers";
+import { clearBoardDOM } from "../helpers/gameboardHelpers";
 
 const WinnerCard = () => {
   const dispatch = useDispatch();

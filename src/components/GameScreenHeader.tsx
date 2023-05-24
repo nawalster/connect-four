@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "./Logo";
 import { useDispatch, useSelector } from "react-redux";
 import { displayPauseMenu, restartGame } from "../reducers/gameSlice";
-import { clearBoardDOM } from "../helpers/helpers";
+import { clearBoardDOM } from "../helpers/gameboardHelpers";
 
 const GameScreenHeader = () => {
   const dispatch = useDispatch();

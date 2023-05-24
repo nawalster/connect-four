@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { closePauseMenu, restartGame } from "../reducers/gameSlice";
 import { RootState } from "../store/store";
-import { clearBoardDOM } from "../helpers/helpers";
+import { clearBoardDOM } from "../helpers/gameboardHelpers";
 
 const PauseMenuModal = () => {
   const isPauseMenuOpen = useSelector(
@@ -44,7 +44,7 @@ const PauseMenuModal = () => {
           <Link
             to="/"
             className="menu-link pause-menu-link text-center pink-bg-clr white-text-clr"
-            // onClick={handleClosePauseMenu}
+            onClick={handleRestart}
           >
             quit game
           </Link>
