@@ -1,5 +1,3 @@
-import React from "react";
-import CheckIcon from "../assets/images/icon-check.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { closeGameRules } from "../reducers/gameSlice";

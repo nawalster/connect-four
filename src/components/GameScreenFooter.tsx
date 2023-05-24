@@ -1,6 +1,5 @@
-import React from "react";
 import { RootState } from "../store/store";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const GameScreenFooter = () => {
   const isWinnerDeclared = useSelector(

@@ -1,4 +1,3 @@
-import React from "react";
 import GameMenu from "./GameMenu";
 import GameRulesModal from "./GameRulesModal";
 
