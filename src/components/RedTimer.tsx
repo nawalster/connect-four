@@ -1,8 +1,10 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../store/store";
+import { countdown, otherPlayerIsWinner } from "../reducers/gameSlice";
 
 const RedTimer = () => {
+  const dispatch = useDispatch();
   const isWinnerDeclared = useSelector(
     (state: RootState) => state.game.isWinnerDeclared
   );
@@ -10,6 +12,27 @@ const RedTimer = () => {
     (state: RootState) => state.game.isComputerPlaying
   );
   const timePerMove = useSelector((state: RootState) => state.game.timePerMove);
+
+  const isPauseMenuOpen = useSelector(
+    (state: RootState) => state.game.isPauseMenuOpen
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isPauseMenuOpen) {
+        dispatch(countdown());
+
+        if (timePerMove === 0) {
+          // 1 = red player
+          dispatch(otherPlayerIsWinner({ currentPlayer: 1 }));
+        }
+      }
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [isPauseMenuOpen, timePerMove, dispatch]);
 
   return (
     <div

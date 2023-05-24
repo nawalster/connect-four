@@ -1,18 +1,30 @@
 import React from "react";
-import { startNewGame, declareWinner } from "../reducers/gameSlice";
+import { declareWinner } from "../reducers/gameSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { closePauseMenu, playAgain } from "../reducers/gameSlice";
+import { RootState } from "../store/store";
+import { clearBoardDOM } from "../helpers/helpers";
 
 const WinnerCard = () => {
-  const handleStartNewGame = () => {
-    // startNewGame
+  const dispatch = useDispatch();
+  const winningPiece = useSelector(
+    (state: RootState) => state.game.winningPiece
+  );
+
+  const handlePlayAgain = () => {
+    dispatch(playAgain());
+    clearBoardDOM();
   };
   return (
     <div className="winner-card">
       <div className="winner-card-text">
-        <p className="winner-name">player 2</p>
+        <p className="winner-name">
+          player {winningPiece !== 0 ? winningPiece : "no one"}
+        </p>
         <p className="winner-statement">wins</p>
         <button
           className="game-screen-btn play-again-btn"
-          // onClick={handleStartNewGame}
+          onClick={handlePlayAgain}
         >
           play again
         </button>

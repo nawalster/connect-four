@@ -9,7 +9,14 @@ import YellowTimer from "./YellowTimer";
 import WinnerCard from "./WinnerCard";
 import PauseMenuModal from "./PauseMenuModal";
 
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../store/store";
+
 const GameScreen = () => {
+  const isRedTurn = useSelector((state: RootState) => state.game.isRedTurn);
+  const isWinnerDeclared = useSelector(
+    (state: RootState) => state.game.isWinnerDeclared
+  );
   return (
     <main>
       <div className="game-screen-container">
@@ -19,9 +26,8 @@ const GameScreen = () => {
           <YellowScoreCard />
         </div>
         <GameBoard />
-        <RedTimer />
-        <YellowTimer />
-        <WinnerCard />
+        {isRedTurn ? <RedTimer /> : <YellowTimer />}
+        {isWinnerDeclared && <WinnerCard />}
         <PauseMenuModal />
       </div>
       <GameScreenFooter />

@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { closePauseMenu } from "../reducers/gameSlice";
+import { closePauseMenu, restartGame } from "../reducers/gameSlice";
 import { RootState } from "../store/store";
+import { clearBoardDOM } from "../helpers/helpers";
 
 const PauseMenuModal = () => {
   const isPauseMenuOpen = useSelector(
@@ -10,8 +11,12 @@ const PauseMenuModal = () => {
   );
   const dispatch = useDispatch();
 
-  const handleClosePauseMenu = () => {
+  const handleContinueGame = () => {
     dispatch(closePauseMenu());
+  };
+  const handleRestart = () => {
+    dispatch(restartGame());
+    clearBoardDOM();
   };
 
   return (
@@ -26,17 +31,20 @@ const PauseMenuModal = () => {
         <div>
           <button
             className="menu-btn pause-menu-btn text-center"
-            onClick={handleClosePauseMenu}
+            onClick={handleContinueGame}
           >
             continue game
           </button>
-          <button className="menu-btn pause-menu-btn text-center">
+          <button
+            className="menu-btn pause-menu-btn text-center"
+            onClick={handleRestart}
+          >
             restart
           </button>
           <Link
             to="/"
             className="menu-link pause-menu-link text-center pink-bg-clr white-text-clr"
-            onClick={handleClosePauseMenu}
+            // onClick={handleClosePauseMenu}
           >
             quit game
           </Link>

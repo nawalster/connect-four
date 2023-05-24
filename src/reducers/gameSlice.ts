@@ -13,6 +13,7 @@ export interface GameState {
   isWinnerDeclared: boolean;
   isDraw: boolean;
   pieces: number[];
+  winningPiece: number;
 }
 
 const initialState: GameState = {
@@ -28,6 +29,7 @@ const initialState: GameState = {
   isWinnerDeclared: false,
   isDraw: false,
   pieces: Array(42).fill(0),
+  winningPiece: 0,
 };
 
 const gameSlice = createSlice({
@@ -49,7 +51,7 @@ const gameSlice = createSlice({
     toggleTurn: (state) => {
       state.isRedTurn = !state.isRedTurn;
     },
-    updatePiecesState: (
+    updatePieces: (
       state,
       action: PayloadAction<{ indexToUpdate: number; player: number }>
     ) => {
@@ -62,17 +64,8 @@ const gameSlice = createSlice({
     turnOnAnimation: (state) => {
       state.isAnimationInProgress = true;
     },
-    declareWinner: (state) => {
-      state.isWinnerDeclared = true;
-    },
     declareDraw: (state) => {
       state.isDraw = true;
-    },
-    addPointToRed: (state) => {
-      state.redScore += 1;
-    },
-    addPointToYellow: (state) => {
-      state.yellowScore += 1;
     },
     countdown: (state) => {
       state.timePerMove -= 1;
@@ -80,8 +73,61 @@ const gameSlice = createSlice({
     resetCountdown: (state) => {
       state.timePerMove = 30;
     },
-    startNewGame: () => {
+    playAgain: (state) => {
+      return {
+        ...state,
+        firstTurnRed: state.isRedTurn ? false : true,
+        // isComputerPlaying: state.isComputerPlaying ? true : false,
+        isRedTurn: state.isRedTurn ? false : true,
+        isAnimationInProgress: false,
+        isWinnerDeclared: false,
+        isDraw: false,
+        pieces: Array(42).fill(0),
+        winningPiece: 0,
+      };
+    },
+    restartGame: () => {
       return initialState;
+    },
+    addPointToScore: (state, action: PayloadAction<{ player: number }>) => {
+      const { player } = action.payload;
+
+      if (player === 1) {
+        state.redScore += 1;
+      } else if (player === 2) {
+        state.yellowScore += 1;
+      }
+    },
+    otherPlayerIsWinner: (
+      state,
+      action: PayloadAction<{ currentPlayer: number }>
+    ) => {
+      const { currentPlayer } = action.payload;
+      state.isWinnerDeclared = true;
+      state.isAnimationInProgress = true;
+      state.isRedTurn = !state.isRedTurn;
+
+      if (currentPlayer === 1) {
+        state.yellowScore += 1;
+      } else if (currentPlayer === 2) {
+        state.redScore += 1;
+      }
+    },
+    declareWinner: (
+      state,
+      action: PayloadAction<{ currentPlayer: number }>
+    ) => {
+      const { currentPlayer } = action.payload;
+      state.isWinnerDeclared = true;
+      state.isAnimationInProgress = true;
+
+      if (currentPlayer === 1) {
+        state.redScore += 1;
+        state.winningPiece = 1;
+      } else if (currentPlayer === 2) {
+        state.yellowScore += 1;
+        state.winningPiece = 2;
+      }
     },
   },
 });
@@ -92,16 +138,16 @@ export const {
   displayPauseMenu,
   closePauseMenu,
   toggleTurn,
-  updatePiecesState,
+  updatePieces,
   turnOffAnimation,
   turnOnAnimation,
   declareWinner,
   declareDraw,
-  addPointToRed,
-  addPointToYellow,
   countdown,
   resetCountdown,
-  startNewGame,
+  restartGame,
+  playAgain,
+  addPointToScore,
+  otherPlayerIsWinner,
 } = gameSlice.actions;
-
 export default gameSlice.reducer;
