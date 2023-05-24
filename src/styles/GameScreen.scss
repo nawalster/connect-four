@@ -1,0 +1,106 @@
+/*
+=============== 
+Game Screen
+===============
+*/
+body {
+  background-color: var(--clr-light-purple);
+}
+.game-screen-container {
+  width: 100%;
+  max-width: var(--full-width);
+  margin: 0 auto;
+  padding: 3.125rem 1.25rem 0 1.25rem;
+}
+
+.game-screen-btn,
+.game-screen-menu-btn {
+  cursor: pointer;
+  width: 6.75rem;
+  height: 2.4375rem;
+  color: var(--clr-white);
+  background-color: var(--clr-dark-purple);
+  font-size: var(--ft-heading-xs);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-xs);
+  border-radius: var(--radius20);
+  border: none;
+  transition: var(--transition1);
+  text-transform: uppercase;
+}
+
+.game-screen-btn:hover {
+  background-color: var(--clr-pink);
+}
+
+@media screen and (min-width: 768px) {
+  .game-screen-menu-btn {
+    width: 5.5625rem;
+    margin-right: 1.125rem;
+  }
+}
+
+.game-screen-container {
+  width: 100%;
+  max-width: var(--full-width);
+  margin: 0 auto;
+  padding: 3.125rem 1.25rem 0 1.25rem;
+}
+/*
+=============== 
+Game Screen Header
+===============
+*/
+.game-screen-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3.125rem;
+}
+
+@media screen and (min-width: 768px) {
+  .game-screen-container {
+    padding: 3.125rem 0 0 0;
+  }
+  .game-screen-header {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 1438px) {
+  .game-screen-header {
+    margin-bottom: 3.3125rem;
+  }
+}
+/*
+=============== 
+Game Screen Footer
+===============
+*/
+.footer-background {
+  width: 100%;
+  // background-color: var(--clr-dark-purple);
+  min-height: 14.625rem;
+  margin-top: -1rem;
+  border-top-left-radius: var(--radius60);
+  border-top-right-radius: var(--radius60);
+}
+
+@media screen and (min-width: 768px) {
+  .footer-background {
+    height: 14.75rem;
+    margin-top: -3rem;
+  }
+}
+
+@media screen and (min-width: 1438px) {
+  .footer-background {
+    height: 16rem;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .footer-background {
+    height: 17.2rem;
+  }
+}

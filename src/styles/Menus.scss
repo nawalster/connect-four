@@ -1,5 +1,46 @@
 /*
-=============== 
+===============
+Menus (pause)
+===============
+*/
+.pause-menu {
+  display: grid;
+  place-items: center;
+  row-gap: 2.1875rem;
+  background-color: var(--clr-light-purple);
+  width: 20.94rem;
+  height: auto;
+  border: var(--border);
+  border-radius: var(--radius40);
+  box-shadow: var(--box-shadow1);
+  margin: 0 auto;
+  padding: 2.875rem 1.25rem 1.875rem 1.25rem;
+}
+
+.pause-menu-btn,
+.pause-menu-link {
+  width: 18.26rem;
+}
+
+.pause-menu-header {
+  color: var(--clr-white);
+  font-size: var(--ft-heading-l);
+  line-height: var(--lh-l);
+  text-align: center;
+  text-transform: uppercase;
+}
+.pause-menu {
+  padding: 3.0625rem 2.1875rem 1.125rem 2.1875rem;
+}
+
+@media screen and (min-width: 1438px) {
+  .pause-menu {
+    margin: 0 auto;
+  }
+}
+
+/*
+===============
 Menus (main)
 ===============
 */
@@ -46,7 +87,8 @@ Menus (main)
   justify-content: center;
 }
 
-.menu-link {
+.menu-link,
+.pause-menu-btn {
   margin-bottom: 1.6875rem;
 }
 
@@ -55,8 +97,36 @@ Menus (main)
   height: 2.875rem;
 }
 
+.pause-menu {
+  display: grid;
+  place-items: center;
+  row-gap: 2.1875rem;
+  background-color: var(--clr-light-purple);
+  width: 20.94rem;
+  height: auto;
+  border: var(--border);
+  border-radius: var(--radius40);
+  box-shadow: var(--box-shadow1);
+  margin: 0 auto;
+  padding: 2.875rem 1.25rem 1.875rem 1.25rem;
+}
+
+.pause-menu-btn,
+.pause-menu-link {
+  width: 18.26rem;
+}
+
+.pause-menu-header {
+  color: var(--clr-white);
+  font-size: var(--ft-heading-l);
+  line-height: var(--lh-l);
+  text-align: center;
+  text-transform: uppercase;
+}
+
 @media screen and (min-width: 768px) {
-  .menu {
+  .menu,
+  .pause-menu {
     width: 30rem;
     height: auto;
     border: var(--border);
@@ -69,10 +139,22 @@ Menus (main)
     padding: 4.375rem 2.1875rem 3rem 2.1875rem;
   }
 
+  .pause-menu {
+    padding: 3.0625rem 2.1875rem 1.125rem 2.1875rem;
+  }
+
   .menu-btn,
-  .menu-link {
+  .menu-link,
+  .pause-menu-btn,
+  .pause-menu-link {
     width: 25rem;
     padding: 0.81rem 1.25rem;
     transition: var(--transition1);
+  }
+}
+
+@media screen and (min-width: 1438px) {
+  .pause-menu {
+    margin: 0 auto;
   }
 }

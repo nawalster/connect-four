@@ -9,17 +9,13 @@ const GameMenu = () => {
   const dispatch = useDispatch();
 
   const handleOpenGameRules = () => {
-    console.log("open game rules");
     dispatch(displayGameRules());
   };
   return (
     <div className="menu">
       <Logo />
       <div>
-        <Link
-          to="/gamescreen"
-          className="menu-link yellow-bg-clr black-text-clr"
-        >
+        <Link to="/game" className="menu-link yellow-bg-clr black-text-clr">
           play vs player
           <img
             src={PlayVPlayIcon}
