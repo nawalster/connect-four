@@ -1,4 +1,3 @@
-import React from "react";
 import GameBoard from "./GameBoard";
 import GameScreenHeader from "./GameScreenHeader";
 import GameScreenFooter from "./GameScreenFooter";
@@ -9,7 +8,7 @@ import YellowTimer from "./YellowTimer";
 import WinnerCard from "./WinnerCard";
 import PauseMenuModal from "./PauseMenuModal";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 
 const GameScreen = () => {
