@@ -18,10 +18,10 @@ This project is a Connect Four game that allows human player vs. human player ga
 
 Users should be able to:
 
-- View the rules of the game
-- Engage in a Connect Four match against another human player (with alternating turns on the same screen)
-- See that the design/layout adjusts responsively based on the screen size of their device
-- See that the discs animate into their position when a move is made
+- [x] View the rules of the game
+- [x] Engage in a Connect Four match against another human player (with alternating turns on the same screen)
+- [x] See that the design/layout adjusts responsively based on the screen size of their device
+- [x] See that the discs animate into their position when a move is made
 
 ### Screenshot
 
@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site: [https://connect-four-nawal.vercel.app/](https://connect-four-nawal.vercel.app/)
+- Demo: [https://connect-four-nawal.vercel.app/](https://connect-four-nawal.vercel.app/)
 
 ## My process
 
@@ -43,4 +43,4 @@ Users should be able to:
 
 ### Challenges/Learnings
 
-TODO
+TODO..
