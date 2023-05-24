@@ -1,4 +1,3 @@
-import React from "react";
 import YouIcon from "../assets/images/you.svg";
 import Player1Icon from "../assets/images/player-one.svg";
 import { useSelector } from "react-redux";

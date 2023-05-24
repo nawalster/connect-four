@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../store/store";
 import { countdown, otherPlayerIsWinner } from "../reducers/gameSlice";

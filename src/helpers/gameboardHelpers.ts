@@ -195,8 +195,7 @@ export const checkForEndOfGame = (
   dispatch: any,
   declareWinner: any,
   turnOnAnimation: any,
-  declareDraw: any,
-  isWinnerDeclared: any
+  declareDraw: any
 ) => {
   if (didPlayerWin(player, pieces)) {
     dispatch(declareWinner({ currentPlayer: player }));
