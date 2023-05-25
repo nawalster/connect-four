@@ -7,9 +7,9 @@ export const clearBoardDOM = () => {
   });
 };
 
-export const getFirstAvailableRow = (pieces: any, column: any) => {
+export const getFirstAvailableRow = (pieces: number[], column: number) => {
   return pieces
-    .filter((_: any, index: any) => index % 7 === column)
+    .filter((_: number, index: number) => index % 7 === column)
     .lastIndexOf(0);
 };
 
@@ -21,14 +21,14 @@ export const removeUnplacedPiece = () => {
   }
 };
 export const mouseOverColumnIndicator = (
-  column: any,
-  isRedTurn: any,
-  pieces: any,
-  isWinnerDeclared: any,
-  RedIndicator: any,
-  YellowIndicator: any
+  column: number,
+  isRedTurn: boolean,
+  pieces: number[],
+  isWinnerDeclared: boolean,
+  RedIndicator: string,
+  YellowIndicator: string
 ) => {
-  const player: any = isRedTurn ? 1 : 2;
+  const player: number = isRedTurn ? 1 : 2;
   const availableRow = getFirstAvailableRow(pieces, column);
 
   if (availableRow === -1) {
@@ -46,13 +46,13 @@ export const mouseOverColumnIndicator = (
   indicator.className = "column-indicator";
   indicator.dataset.placed = String(false);
   indicator.src = `${isRedTurn ? RedIndicator : YellowIndicator}`;
-  indicator.dataset.player = player;
+  indicator.dataset.player = String(player);
   boardColumn?.appendChild(indicator);
 };
 
 export const gamePieceDropAnimation = (
-  gamePiece: any,
-  pieceDropHeight: any
+  gamePiece: HTMLElement,
+  pieceDropHeight: number
 ) => {
   gamePiece.animate(
     [
@@ -70,15 +70,15 @@ export const gamePieceDropAnimation = (
 };
 
 export const handlePlayerMove = (
-  e: any,
-  column: any,
-  isWinnerDeclared: any,
-  pieces: any,
-  isRedTurn: any,
-  dispatch: any,
-  updatePieces: any,
-  turnOnAnimation: any,
-  resetCountdown: any
+  e: Event,
+  column: number,
+  isWinnerDeclared: boolean,
+  pieces: number[],
+  isRedTurn: boolean,
+  dispatch: (action: void) => void,
+  updatePieces: (payload: { indexToUpdate: number; player: number }) => void,
+  turnOnAnimation: () => void,
+  resetCountdown: () => void
 ) => {
   if (isWinnerDeclared) {
     e.preventDefault();
@@ -118,7 +118,7 @@ export const handlePlayerMove = (
   dispatch(resetCountdown());
 };
 
-export const addWinMarker = (boardCell: any) => {
+export const addWinMarker = (boardCell: number) => {
   const gameboard = document.querySelector(".gameboard");
 
   const winMarker = document.createElement("div");
@@ -128,7 +128,7 @@ export const addWinMarker = (boardCell: any) => {
   }, 500);
 };
 
-export const didPlayerWin = (player: any, pieces: any) => {
+export const didPlayerWin = (player: number, pieces: number[]) => {
   for (let index = 0; index < 42; index++) {
     if (
       index % 7 < 4 &&
@@ -190,12 +190,12 @@ export const didPlayerWin = (player: any, pieces: any) => {
 };
 
 export const checkForEndOfGame = (
-  player: any,
-  pieces: any,
-  dispatch: any,
-  declareWinner: any,
-  turnOnAnimation: any,
-  declareDraw: any
+  player: number,
+  pieces: number[],
+  dispatch: (action: void) => void,
+  declareWinner: (payload: { currentPlayer: number }) => void,
+  turnOnAnimation: () => void,
+  declareDraw: () => void
 ) => {
   if (didPlayerWin(player, pieces)) {
     dispatch(declareWinner({ currentPlayer: player }));
