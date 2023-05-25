@@ -70,7 +70,8 @@ export const gamePieceDropAnimation = (
 };
 
 export const handlePlayerMove = (
-  e: Event,
+  // e: Event,
+  e: React.MouseEvent<HTMLDivElement, MouseEvent>,
   column: number,
   isWinnerDeclared: boolean,
   pieces: number[],
