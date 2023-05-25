@@ -75,7 +75,7 @@ export const handlePlayerMove = (
   isWinnerDeclared: boolean,
   pieces: number[],
   isRedTurn: boolean,
-  dispatch: (action: void) => void,
+  dispatch: (action: any) => void,
   updatePieces: (payload: { indexToUpdate: number; player: number }) => void,
   turnOnAnimation: () => void,
   resetCountdown: () => void
@@ -192,7 +192,7 @@ export const didPlayerWin = (player: number, pieces: number[]) => {
 export const checkForEndOfGame = (
   player: number,
   pieces: number[],
-  dispatch: (action: void) => void,
+  dispatch: (action: any) => void,
   declareWinner: (payload: { currentPlayer: number }) => void,
   turnOnAnimation: () => void,
   declareDraw: () => void
